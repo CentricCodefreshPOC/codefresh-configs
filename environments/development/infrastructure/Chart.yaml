@@ -8,7 +8,7 @@ keywords:
   - infrastructure
 version: 1.2.3
 sources:
-  - https://github.com/flavorplus/codefresh-configs/environments/development/example-voting-app-infra
+  - https://github.com/flavorplus/codefresh-configs/environments/development/infrastructure
 maintainers:
   - name: Dustin Van Buskirk
     email: dustin@codefresh.io
