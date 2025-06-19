@@ -9,7 +9,7 @@ keywords:
 version: 1.2.0
 appVersion: 1.2.4
 sources:
-  - https://github.com/muruchetty/environments/production/vote
+  - https://github.com/flavorplus/codefresh-configs/environments/production/vote
 maintainers:
   - name: Dustin Van Buskirk
     email: dustin@codefresh.io

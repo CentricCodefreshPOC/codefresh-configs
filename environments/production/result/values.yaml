@@ -1,7 +1,7 @@
 result:
   image:
-    repository: codedev.jfrog.io/poc-demo-1-docker-local/result
-    tag: 1.0.18
+    repository: ghcr.io/flavorplus/codefresh-sample-svc-a
+    tag: 1.0.0
 analysis:
   curl:
     successCode: 200

@@ -9,7 +9,7 @@ keywords:
 version: 1.2.0
 appVersion: 1.0.17
 sources:
-  - https://github.com/muruchetty/environments/development/result
+  - https://github.com/flavorplus/codefresh-configs/environments/development/result
 maintainers:
   - name: Dustin Van Buskirk
     email: dustin@codefresh.io

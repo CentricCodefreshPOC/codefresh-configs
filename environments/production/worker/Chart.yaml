@@ -9,7 +9,7 @@ keywords:
 version: 1.2.0
 appVersion: 1.2.2
 sources:
-  - https://github.com/muruchetty/environments/production/worker
+  - https://github.com/flavorplus/codefresh-configs/environments/production/worker
 maintainers:
   - name: Dustin Van Buskirk
     email: dustin@codefresh.io
