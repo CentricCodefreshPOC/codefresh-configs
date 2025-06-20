@@ -1,5 +1,6 @@
 postgresql:
   enabled: true
+  fullnameOverride: postgresql-production
   auth:
     postgresPassword: postgres
 

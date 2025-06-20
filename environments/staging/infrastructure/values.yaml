@@ -1,5 +1,6 @@
 postgresql:
   enabled: true
+  fullnameOverride: postgresql-staging
   auth:
     postgresPassword: postgres
 
