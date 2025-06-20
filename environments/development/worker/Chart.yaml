@@ -6,8 +6,8 @@ keywords:
   - kubernetes
   - example-voting-app
   - worker
-version: 1.2.0
-appVersion: 1.2.2
+version: 1.0.0
+appVersion: 1.0.0
 sources:
   - https://github.com/flavorplus/codefresh-configs/environments/development/worker
 maintainers:
@@ -15,5 +15,5 @@ maintainers:
     email: dustin@codefresh.io
 dependencies:
   - name: worker
-    version: 1.2.0
+    version: 1.0.0
     repository: file://../../../charts/worker
