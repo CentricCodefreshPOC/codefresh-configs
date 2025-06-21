@@ -32,7 +32,7 @@ spec:
             name: http
         env:
         - name: REDIS_HOST
-          value: {{ .Values.redis.host | default "example-voting-app-redis-master" | quote }}
+          value: {{ (.Values.redis | default dict ).host | default (printf "redis-%s-master" .Release.Namespace) | quote }}
         - name: TEST_VAR
           value: tes1
   strategy:

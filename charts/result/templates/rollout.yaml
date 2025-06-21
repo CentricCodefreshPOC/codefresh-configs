@@ -34,7 +34,7 @@ spec:
               name: https              
           env:
           - name: POSTGRES_SERVER
-            value: {{ ( .Values.postgresql | default dict ).server | default "example-voting-app-postgresql" | quote }}
+            value: {{ (.Values.postgresql | default dict ).server | default (printf "postgresql-%s" .Release.Namespace) | quote }}
           - name: POSTGRES_USERNAME
             value: {{ (.Values.postgresql | default dict ).postgresUsername | default "postgres" | quote }}
           - name: POSTGRES_PASSWORD
