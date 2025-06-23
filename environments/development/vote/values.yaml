@@ -2,3 +2,6 @@ vote:
   image:
     repository: ghcr.io/flavorplus/codefresh-sample-svc-b
     tag: 1.0.0
+result:
+  image:
+    tag: 1.0.1
