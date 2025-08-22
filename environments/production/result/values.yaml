@@ -1,6 +1,6 @@
 result:
   image:
-    repository: ghcr.io/flavorplus/codefresh-sample-svc-a
+    repository: aiforaplatform/codefresh-sample-svc-a
     tag: 1.0.6
 analysis:
   curl:
