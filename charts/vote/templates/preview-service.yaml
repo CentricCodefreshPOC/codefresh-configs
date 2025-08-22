@@ -16,22 +16,23 @@ spec:
       name: http
   selector:
     app: {{ template "fullname" . }}
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: {{ template "fullname" . }}-preview
-#   annotations:
-#     kubernetes.io/ingress.class: nginx
-# spec:
-#   rules:
-#   - host: "{{ template "fullname" . }}-preview.{{ .Values.domain}}"
-#     http:
-#       paths:
-#       - path: /
-#         pathType: ImplementationSpecific
-#         backend:
-#           service:
-#             # Reference to a Service name, also specified in the Rollout spec.strategy.canary.stableService field
-#             name: {{ template "fullname" . }}-preview
-#             port:
-#               name: http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "fullname" . }}-preview
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: "{{ template "fullname" . }}-preview.{{ .Values.domain}}"
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            # Reference to a Service name, also specified in the Rollout spec.strategy.canary.stableService field
+            name: {{ template "fullname" . }}-preview
+            port:
+              name: http
