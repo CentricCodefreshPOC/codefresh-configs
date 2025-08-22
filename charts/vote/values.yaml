@@ -3,9 +3,9 @@
 # Declare name/value pairs to be passed into your templates.
 # name: value
 image:
-  repository: ghcr.io/flavorplus/codefresh-sample-svc-b
+  repository: aiforaplatform/codefresh-poc-svc-b
   tag: 1.0.0
 redis:
   usePassword: false
 replicaCount: 1
-domain: sales-dev.codefresh.io
+domain: cpi.centricsoftware.com
