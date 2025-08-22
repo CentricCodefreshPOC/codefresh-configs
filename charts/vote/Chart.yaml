@@ -3,4 +3,4 @@ description: A Helm chart for vote service of Docker example-voting-app
 name: vote
 version: 1.0.0
 sources:
-  - https://github.com/flavorplus/codefresh-configs/charts/vote
+  - https://github.com/CentricCodefreshPOC/codefresh-configs/charts/vote
