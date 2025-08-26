@@ -5,13 +5,18 @@ postgresql:
   fullnameOverride: postgresql-development
   auth:
     postgresPassword: postgres
-  persistence:
-    enabled: false
+  primary:
+    persistence:
+      enabled: false
 
 redis:
   enabled: true
   fullnameOverride: redis-development
   auth: 
     enabled: false
-  persistence:
-    enabled: false
+  master:
+    persistence:
+      enabled: false
+  replica:
+    persistence:
+      enabled: false
