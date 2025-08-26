@@ -1,13 +1,13 @@
+defaultStorageClass: gp2
+
 postgresql:
   enabled: true
-  defaultStorageClass: gp2
   fullnameOverride: postgresql-development
   auth:
     postgresPassword: postgres
 
 redis:
   enabled: true
-  defaultStorageClass: gp2
   fullnameOverride: redis-development
   auth: 
     enabled: false
