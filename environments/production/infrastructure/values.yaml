@@ -3,9 +3,18 @@ postgresql:
   fullnameOverride: postgresql-production
   auth:
     postgresPassword: postgres
+  primary:
+    persistence:
+      enabled: false
 
 redis:
   enabled: true
   fullnameOverride: redis-production
   auth: 
     enabled: false
+  master:
+    persistence:
+      enabled: false
+  replica:
+    persistence:
+      enabled: false

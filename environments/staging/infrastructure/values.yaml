@@ -3,9 +3,18 @@ postgresql:
   fullnameOverride: postgresql-staging
   auth:
     postgresPassword: postgres
+  primary:
+    persistence:
+      enabled: false
 
 redis:
   enabled: true
   fullnameOverride: redis-staging
   auth: 
     enabled: false
+  master:
+    persistence:
+      enabled: false
+  replica:
+    persistence:
+      enabled: false
