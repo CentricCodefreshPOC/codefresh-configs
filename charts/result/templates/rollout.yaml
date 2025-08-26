@@ -39,6 +39,8 @@ spec:
             value: {{ (.Values.postgresql | default dict ).postgresUsername | default "postgres" | quote }}
           - name: POSTGRES_PASSWORD
             value: {{ (.Values.postgresql | default dict ).postgresqlPassword | default "postgres" | quote }}
+      imagePullSecrets:
+        - name: dockerhub
   strategy:
     canary:
       canaryService: {{ template "fullname" . }}-preview

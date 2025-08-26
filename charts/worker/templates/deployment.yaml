@@ -35,3 +35,5 @@ spec:
             value: {{ (.Values.postgresql | default dict ).postgresPassword | default "postgres" | quote }}
           - name: REDIS_HOST
             value: {{ (.Values.redis | default dict ).host | default (printf "redis-%s-master" .Release.Namespace) | quote }}
+      imagePullSecrets:
+        - name: dockerhub
