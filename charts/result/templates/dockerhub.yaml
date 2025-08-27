@@ -16,4 +16,4 @@ spec:
       templates:
         .dockerconfigjson:
           text: |
-            {{- printf "%s" (get .Secrets "key") -}}
+            {{` {{- printf "%s" (get .Secrets "key") -}}`}}
