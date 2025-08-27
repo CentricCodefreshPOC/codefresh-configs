@@ -26,6 +26,8 @@ spec:
         - name: {{ template "fullname" . }}
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{default "Always" .Values.pullPolicy}}
+          imagePullSecrets:
+            - name: dockerhub
           env:
           - name: POSTGRES_SERVER
             value: {{ (.Values.postgresql | default dict ).server | default (printf "postgresql-%s" .Release.Namespace) | quote }}

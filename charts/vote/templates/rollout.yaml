@@ -27,6 +27,8 @@ spec:
       - name: {{ template "fullname" . }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{default "Always" .Values.image.pullPolicy}}
+        imagePullSecrets:
+          - name: dockerhub
         ports:
           - containerPort: 80
             name: http
