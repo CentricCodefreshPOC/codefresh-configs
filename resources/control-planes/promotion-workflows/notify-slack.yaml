@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: post-action
+  name: notify-slack
   annotations:
     codefresh.io/workflow-origin: promotion
     version: 0.0.1
