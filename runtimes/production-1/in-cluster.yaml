@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,production-1/cf-gitops-runtime.yaml,production-1/default-git-source.yaml,production-1/demoapps.yaml,runtimes/production-1/**/*.yaml,runtimes/production-1/*.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,configurations/**/*.yaml,control-planes/**/*.yaml,control-planes/*.yaml,production-1/cf-gitops-runtime.yaml,production-1/default-git-source.yaml,production-1/demoapps.yaml,production-1/marketplace-git-source.yaml,runtimes/production-1/**/*.yaml,runtimes/production-1/*.yaml}
       recurse: true
     path: resources
     repoURL: https://github.com/CentricCodefreshPOC/codefresh-configs.git
