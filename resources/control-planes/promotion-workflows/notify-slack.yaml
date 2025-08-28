@@ -26,39 +26,8 @@ spec:
     # Parent template to run both tasks
     - name: main-workflow
       steps:
-        - - name: run-echo
-            template: echo
         - - name: run-send-message
             template: send-message
-
-    # Echo template
-    - name: echo
-      script:
-        image: alpine
-        command:
-          - sh
-        source: >
-          echo "syncing
-          {{workflow.parameters.APP_NAMESPACE}}/{{workflow.parameters.APP_NAME}}
-          from {{workflow.parameters.REPO_URL}} branch
-          {{workflow.parameters.BRANCH}} path {{workflow.parameters.PATH}}"
-
-          if [[ -n "{{workflow.parameters.COMMIT_SHA}}" ]]; then
-            echo "commit SHA: {{workflow.parameters.COMMIT_SHA}}"
-          fi
-
-          if [[ -n "{{workflow.parameters.COMMIT_AUTHOR}}" ]]; then
-            echo "commit author: {{workflow.parameters.COMMIT_AUTHOR}}"
-          fi
-
-          if [[ -n "{{workflow.parameters.COMMIT_MESSAGE}}" ]]; then
-            echo "commit message: {{workflow.parameters.COMMIT_MESSAGE}}"
-          fi
-
-          if [[ -n "{{workflow.parameters.COMMIT_DATE}}" ]]; then
-            echo "commit date: {{workflow.parameters.COMMIT_DATE}}"
-          fi
-
     # Send-message template
     - name: send-message
       retryStrategy:
