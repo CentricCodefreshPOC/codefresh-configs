@@ -12,17 +12,25 @@ metadata:
     description: ""
 spec:
   serviceAccountName: cf-default-promotion-workflows-sa
-  entrypoint: print-message     # Fields other than "arguments" and "templates" not supported in v2.4 - v2.6
+  entrypoint: notify-slack
   arguments:
     parameters:
-      - name: message
-        value: hello world
+      - name: APP_NAMESPACE
+      - name: APP_NAME
+      - name: REPO_URL
+      - name: BRANCH
+      - name: PATH
+      - name: COMMIT_SHA
+        value: ''
+      - name: COMMIT_MESSAGE
+        value: ''
+      - name: COMMIT_AUTHOR
+        value: ''
+      - name: COMMIT_DATE
+        value: ''
   templates:
-    - name: print-message
-      inputs:
-        parameters:
-          - name: message
+    - name: notify-slack
       container:
         image: busybox
         command: [echo]
-        args: ["{{inputs.parameters.message}}"]
+        args: ["{{inputs.parameters.APP_NAME}}"]
