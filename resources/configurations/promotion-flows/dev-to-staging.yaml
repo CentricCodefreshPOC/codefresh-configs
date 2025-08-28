@@ -1,0 +1,15 @@
+apiVersion: codefresh.io/v1beta1
+kind: PromotionFlow
+metadata:
+  name: dev-to-staging
+  annotations:
+    description: ""
+spec:
+  triggerEnvironment: development
+  steps:
+    - environment: staging
+      dependsOn:
+        - development
+      policy:
+        action: commit
+        postAction: empty
