@@ -1,6 +1,8 @@
+defaultStorageClass: gp2
+
 postgresql:
   enabled: true
-  fullnameOverride: postgresql-staging
+  fullnameOverride: postgresql-development
   auth:
     postgresPassword: postgres
   primary:
@@ -9,7 +11,7 @@ postgresql:
 
 redis:
   enabled: true
-  fullnameOverride: redis-staging
+  fullnameOverride: redis-development
   auth: 
     enabled: false
   master:
