@@ -33,4 +33,4 @@ spec:
       container:
         image: busybox
         command: [echo]
-        args: ["{{inputs.parameters.APP_NAME}}"]
+        args: ["{{workflow.parameters.APP_NAME}}"]
