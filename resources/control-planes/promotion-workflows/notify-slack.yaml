@@ -12,7 +12,7 @@ metadata:
     description: ""
 spec:
   serviceAccountName: cf-default-promotion-workflows-sa
-  entrypoint: notify-slack
+  entrypoint: main
   arguments:
     parameters:
       - name: APP_NAMESPACE
@@ -29,8 +29,17 @@ spec:
       - name: COMMIT_DATE
         value: ''
   templates:
-    - name: notify-slack
-      container:
-        image: busybox
-        command: [echo]
-        args: ["{{workflow.parameters.APP_NAME}}"]
+    - name: main
+      dag:
+        tasks:
+        - name: send-message
+          templateRef:
+            name: argo-hub.slack.0.0.2
+            template: send-message
+          arguments:
+            parameters:
+            - name: SLACK_HOOK_URL
+              value: 'https://hooks.slack.com/services/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'
+            - name: SLACK_TEXT
+              value: ["{{workflow.parameters.APP_NAME}} has been promoted, thank you {{workflow.parameters.COMMIT_AUTHOR}}!"]
+              
