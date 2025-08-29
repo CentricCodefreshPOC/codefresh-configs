@@ -3,4 +3,11 @@ kind: Product
 metadata:
   name: result
 spec:
+  promotionFlows:
+    - name: development-staging
+      gitTriggerSelectors:
+        - key: commitMessage
+          operator: In
+          values:
+            - release
   concurrency: queue
