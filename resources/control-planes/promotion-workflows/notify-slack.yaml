@@ -12,7 +12,7 @@ metadata:
     description: ""
 spec:
   serviceAccountName: cf-default-promotion-workflows-sa
-  entrypoint: main
+  entrypoint: post-message
   arguments:
     parameters:
       - name: APP_NAMESPACE
@@ -29,7 +29,7 @@ spec:
       - name: COMMIT_DATE
         value: ''
   templates:
-    - name: print-message
+    - name: post-message
       inputs:
         parameters:
           - name: message
@@ -37,6 +37,7 @@ spec:
         image: curlimages/curl
         # args: ["-X POST", "-H Content-type: application/json", "--data {{inputs.parameters.message}}", "${SLACK_WEBHOOK_URL}"]
         args: ["google.com"]
+        # https://github.com/argoproj/argo-workflows/blob/41e1e8eea386c792a4f5d9c51664da6b78f90e60/examples/secrets.yaml#L4
         # env:
         # - name: SLACK_WEBHOOK_URL
         #   valueFrom:
