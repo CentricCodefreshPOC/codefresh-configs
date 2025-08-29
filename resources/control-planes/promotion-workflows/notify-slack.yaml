@@ -15,29 +15,26 @@ spec:
   entrypoint: post-message
   arguments:
     parameters:
-      # - name: APP_NAMESPACE
-      # - name: APP_NAME
-      # - name: REPO_URL
-      # - name: BRANCH
-      # - name: PATH
-      # - name: COMMIT_SHA
-      #   value: ''
-      # - name: COMMIT_MESSAGE
-      #   value: ''
-      # - name: COMMIT_AUTHOR
-      #   value: ''
-      # - name: COMMIT_DATE
-      #   value: ''
+      - name: APP_NAMESPACE
+      - name: APP_NAME
+      - name: REPO_URL
+      - name: BRANCH
+      - name: PATH
+      - name: COMMIT_SHA
+        value: ''
+      - name: COMMIT_MESSAGE
+        value: ''
+      - name: COMMIT_AUTHOR
+        value: ''
+      - name: COMMIT_DATE
+        value: ''
   templates:
     - name: post-message
-      inputs:
-        parameters:
-          - name: message
       container:
         # image: busybox
         # command: [echo]
         image: curlimages/curl
-        args: ["-X", "POST", "-H", "'Content-type: application/json'","--data", '{"text":"{{inputs.parameters.message}}"}',"$(SLACK_WEBHOOK_URL)" ] 
+        args: ["-X", "POST", "-H", "'Content-type: application/json'","--data", '{"text":"{{workflow.parameters.APP_NAME}} has been promoted to {{workflow.parameters.COMMIT_SHA}}"}',"$(SLACK_WEBHOOK_URL)" ] 
         # https://github.com/argoproj/argo-workflows/blob/41e1e8eea386c792a4f5d9c51664da6b78f90e60/examples/secrets.yaml#L4
         env:
         - name: SLACK_WEBHOOK_URL
