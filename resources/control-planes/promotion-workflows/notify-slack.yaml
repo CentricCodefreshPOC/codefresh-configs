@@ -15,19 +15,19 @@ spec:
   entrypoint: post-message
   arguments:
     parameters:
-      - name: APP_NAMESPACE
-      - name: APP_NAME
-      - name: REPO_URL
-      - name: BRANCH
-      - name: PATH
-      - name: COMMIT_SHA
-        value: ''
-      - name: COMMIT_MESSAGE
-        value: ''
-      - name: COMMIT_AUTHOR
-        value: ''
-      - name: COMMIT_DATE
-        value: ''
+      # - name: APP_NAMESPACE
+      # - name: APP_NAME
+      # - name: REPO_URL
+      # - name: BRANCH
+      # - name: PATH
+      # - name: COMMIT_SHA
+      #   value: ''
+      # - name: COMMIT_MESSAGE
+      #   value: ''
+      # - name: COMMIT_AUTHOR
+      #   value: ''
+      # - name: COMMIT_DATE
+      #   value: ''
   templates:
     - name: post-message
       inputs:
