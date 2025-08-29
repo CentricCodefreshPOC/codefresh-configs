@@ -1,7 +1,7 @@
 apiVersion: codefresh.io/v1beta1
 kind: PromotionFlow
 metadata:
-  name: test
+  name: development-staging
   annotations:
     description: ""
 spec:
